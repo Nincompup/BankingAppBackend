@@ -7,7 +7,14 @@ import bankroute from "./routes/bank.js";
 mongoose.set("strictQuery", false);
 
 app.use(express.json());
+
 app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   next();
@@ -15,7 +22,7 @@ app.use((req, res, next) => {
 
 const connect = () => {
   mongoose
-    .connect("mongodb+srv://Nincompup:Radsappu%4045@cluster0.hwjvfut.mongodb.net/omdb?retryWrites=true&w=majority")
+    .connect("mongodb+srv://Nincompup:radsappu45@cluster0.mbtjghg.mongodb.net/omdb?retryWrites=true&w=majority")
     .then(() => console.log("Connection Successful...."))
     .catch((err) => console.log(err));
 };
@@ -26,8 +33,8 @@ app.get("/", (req, res) => {
     msg: "Welcome to banking app"
   })
 })
-
 app.use("/api/details", bankroute);
+
 
 app.listen(8082, () => {
   connect();
