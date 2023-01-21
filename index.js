@@ -20,6 +20,13 @@ const connect = () => {
     .catch((err) => console.log(err));
 };
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "SUCCESS",
+    msg: "Welcome to banking app"
+  })
+})
+
 app.use("/api/details", bankroute);
 
 app.listen(8082, () => {
