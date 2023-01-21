@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 const connect = () => {
   mongoose
-    .connect("mongodb://0.0.0.0/omdb")
+    .connect("mongodb+srv://Nincompup:Radsappu%4045@cluster0.hwjvfut.mongodb.net/omdb?retryWrites=true&w=majority")
     .then(() => console.log("Connection Successful...."))
     .catch((err) => console.log(err));
 };
