@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
     msg: "Welcome to banking app"
   })
 })
+
 app.use("/api/details", bankroute);
 
 
