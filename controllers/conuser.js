@@ -60,6 +60,17 @@ export const createTransaction = async(req,res) => {
     }
 }
 
+export const deleteTransaction = async(req,res)=>{
+    const idd=req.params.id;
+    try{
+        await User.findByIdAndDelete(idd);
+        res.status(200).json("Success is happened")
+    }
+    catch(e){
+        console.log(e);
+    }
+}
+
 export const getTransactions =async (req,res) =>{
     try {
         const data =await Transaction.find();
