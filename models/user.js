@@ -3,12 +3,16 @@ import mongoose from "mongoose";
 const UserSchema=new mongoose.Schema({
     name:{
         type:String,
-        required:true
+        // required:true
     },
     email:{
         type:String,
         required:true,
         unique:true
+    },
+    password:{
+        required:true,
+        type:String,
     },
     accno:{
         type:Number,
@@ -17,7 +21,8 @@ const UserSchema=new mongoose.Schema({
     },
     balance:{
         type:Number,
-        required:true,
+        // required:true,
+        default:0
 
     }
 

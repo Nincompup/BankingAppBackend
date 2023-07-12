@@ -2,7 +2,9 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 const app = express();
+import router from './routes/auth.js';
 import bankroute from "./routes/bank.js";
+import authroute from "./routes/auth.js";
 
 mongoose.set("strictQuery", false);
 
@@ -27,6 +29,7 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/details", bankroute);
+app.use("/api/auth", authroute);
 
 
 app.listen(8082, () => {
