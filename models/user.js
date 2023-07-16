@@ -24,6 +24,11 @@ const UserSchema=new mongoose.Schema({
         // required:true,
         default:0
 
+    },
+    pic:{
+        type:String,
+        // required:true,
+       default:"nahi_aaya"
     }
 
 },

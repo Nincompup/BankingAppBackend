@@ -5,12 +5,14 @@ const app = express();
 import router from './routes/auth.js';
 import bankroute from "./routes/bank.js";
 import authroute from "./routes/auth.js";
-
+import bodyParser from 'body-parser';
 mongoose.set("strictQuery", false);
 
 app.use(express.json());
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ limit: '500mb'}))
 
-app.use(cors());
+// app.use(cors());
 
 
 
