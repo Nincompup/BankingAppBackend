@@ -10,6 +10,9 @@
   },
   "author": "Nincompup",
   "license": "ISC",
+  "bin" : {
+    "execute" : "index.js"
+} ,
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
